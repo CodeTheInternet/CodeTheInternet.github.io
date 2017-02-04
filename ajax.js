@@ -11,6 +11,11 @@ Handlebars.registerHelper("activityModes",function(mode){
 	return ACTIVITY_MODES[mode];
 });
 
+Handlebars.registerHelper("formatDate",function(d){
+	var thisDate = new Date(d);
+	return thisDate.toDateString();
+});
+
 function handleResponse(res){
 	var msg = res.ErrorCode+": "+res.Message;
 	if (res.ErrorCode !== 1) {
