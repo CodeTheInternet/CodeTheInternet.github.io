@@ -12,6 +12,9 @@
 	#status.loading { background:#F4F776; }
 	#status.success { background:#BCED91; }
 	#status.error   { background:#FF6347; }
+	#response { margin:10px 0; }
+	#response th { background:#DDD; }
+	#response td { border-bottom:solid 1px #DDD; }
 	</style>
 </head>
 <body>
@@ -28,7 +31,7 @@
 	<thead><tr><th>Activity Period</th><th>Activity Mode</th></tr></thead>
 	<tbody>
 	{{#each activities}}
-	<tr><td>{{period}}</td>{{activityModes activityDetails.mode}}</tr>
+	<tr><td>{{period}}</td><td>{{activityModes activityDetails.mode}}</td></tr>
 	{{/each}}
 	</table>
 	</script>
