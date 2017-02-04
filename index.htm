@@ -25,8 +25,10 @@
 
 	<script type="text/x-handlebars-template" id="tmpl_Crucible">
 	<table>
+	<thead><tr><th>Activity Period</th><th>Activity Mode</th></tr></thead>
+	<tbody>
 	{{#each activities}}
-	<tr><th>activites period</th><td>{{period}}</td></tr>
+	<tr><td>{{period}}</td>{{#activityModes activityDetails.mode}}</tr>
 	{{/each}}
 	</table>
 	</script>

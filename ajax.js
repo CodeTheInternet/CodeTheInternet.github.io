@@ -1,8 +1,15 @@
+// http://destinydevs.github.io/BungieNetPlatform/docs/Enums
+var ACTIVITY_MODES  = ["None","Story","Strike","Raid","AllPvP","Patrol","AllPvE","PvPIntroduction","ThreeVsThree","Control","Lockdown","Team","FreeForAll","TrialsOfOsiris","Doubles","Nightfall","Heroic","AllStrikes","IronBanner","AllArena","Arena","ArenaChallenge","Elimination","Rift","AllMayhem","MayhemClash","MayhemRumble","ZoneControl","Racing","ArenaElderChallenge","Supremacy","PrivateMatchesAll","SupremacyRumble","SupremacyClash","SupremacyInferno","SupremacyMayhem"];
+
 var APIKEY          = "6bc6d0c9e58a45958f7671e186a080b0";
 var BASEURL         = "https://www.bungie.net/Platform/Destiny/";
 var MEMBERSHIP_TYPE = "2/";
 var MEMBERSHIP_ID   = "4611686018441896324/";
 var CHARACTER_ID    = "2305843009259865633/";
+
+Handlebars.registerHelper("activityModes",function(mode){
+	return ACTIVITY_MODES[mode]
+});
 
 function handleResponse(res){
 	var msg = res.ErrorCode+": "+res.Message;
