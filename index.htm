@@ -4,13 +4,19 @@
 	<title>Destiny Crucible Metrics</title>
 	<script src="jquery.js"></script>
 	<script src="ajax.js"></script>
+	<style type="text/css">
+	body { font-family:Arial; }
+	section { width:700px; margin:10px auto; }
+	#status { border:solid 2px #DDD; padding:5px 15px; }
+	#status.loading { background:yellow; }
+	#status.success { background:green; }
+	#status.error   { background:red; }
+	</style>
 </head>
 <body>
 	<section>
 		<h1>Destiny Crucible Metrics Sandbox</h1>
-		<article>
-		Responses will display here
-		</article>
+		<div id="status" class="loading">Loading ...</div>
 	</section>
 </body>
 </html>

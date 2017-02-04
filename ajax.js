@@ -5,9 +5,12 @@ var CHARACTER_ID    = "2305843009259865633/";
 
 function handleResponse(res){
 	if (res.ErrorCode) {
-		console.error(res.ErrorCode+": "+res.Message);
+		var err = res.ErrorCode+": "+res.Message;
+		console.error(err);
+		$('#status').attr('class','error').text(err);
 	} else {
 		console.log(res);
+		$('#status').attr('class','success').text(res.responseText);
 	}	
 }
 
