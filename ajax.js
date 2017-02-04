@@ -34,7 +34,7 @@ $.ajax({
 	// url: BASEURL+"Stats/ActivityHistory/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
 	// url: BASEURL+"Stats/AggregateActivityStats/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
 	// url: BASEURL+"Stats/UniqueWeapons/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
-	url: BASEURL+"/Stats/PostGameCarnageReport/"+ACTIVITY_ID,
+	url: BASEURL+"Stats/PostGameCarnageReport/"+ACTIVITY_ID,
 	beforeSend: function(xhr){ xhr.setRequestHeader('X-API-Key', APIKEY); },
 	method: "GET",
 	data: {
