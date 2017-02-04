@@ -12,4 +12,7 @@ var BASEAJAX = {
 	}
 };
 
-$.ajax(BASEAJAX);
+var stats = BASEAJAX;
+stats.url += "2/4611686018441896324/2305843009259865633";
+
+$.ajax(stats);
