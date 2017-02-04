@@ -5,17 +5,7 @@
 	<script src="jquery.js"></script>
 	<script src="handlebars.js"></script>
 	<script src="ajax.js"></script>
-	<style type="text/css">
-	body { font-family:Arial; }
-	section { width:700px; margin:10px auto; }
-	#status { border:solid 2px #DDD; padding:5px 15px; }
-	#status.loading { background:#F4F776; }
-	#status.success { background:#BCED91; }
-	#status.error   { background:#FF6347; }
-	#response { margin:10px 0; }
-	#response th { background:#DDD; }
-	#response td { border-bottom:solid 1px #DDD; }
-	</style>
+	<style type="text/css" rel="stylesheet" href="style.css"></style>
 </head>
 <body>
 	<section>
@@ -28,10 +18,18 @@
 
 	<script type="text/x-handlebars-template" id="tmpl_Crucible">
 	<table>
-	<thead><tr><th>Activity Period</th><th>Activity Mode</th></tr></thead>
+	<thead><tr>
+		<th>Activity Period</th>
+		<th>Activity Mode</th>
+		<th>KDR</th>
+	</tr></thead>
 	<tbody>
 	{{#each activities}}
-	<tr><td>{{period}}</td><td>{{activityModes activityDetails.mode}}</td></tr>
+	<tr>
+		<td>{{period}}</td>
+		<td>{{activityModes activityDetails.mode}}</td>
+		<td>{{values.killsDeathsRatio.displayValue}}</td>
+	</tr>
 	{{/each}}
 	</table>
 	</script>
