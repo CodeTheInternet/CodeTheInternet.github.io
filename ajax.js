@@ -7,6 +7,8 @@ var MEMBERSHIP_TYPE = "2/";
 var MEMBERSHIP_ID   = "4611686018441896324/";
 var CHARACTER_ID    = "2305843009259865633/";
 
+var ACTIVITY_ID = "6148095442"; // or 4163254808
+
 Handlebars.registerHelper("activityModes",function(mode){
 	return ACTIVITY_MODES[mode];
 });
@@ -22,16 +24,17 @@ function handleResponse(res){
 		console.error(res);
 		$('#status').attr('class','error');
 	} else {
-		// console.log(res);
+		console.log(res);
 		$('#status').attr('class','success');
 	}
 	$('#status').text(msg);
 }
 
 $.ajax({
-	url: BASEURL+"Stats/ActivityHistory/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
+	// url: BASEURL+"Stats/ActivityHistory/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
 	// url: BASEURL+"Stats/AggregateActivityStats/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
 	// url: BASEURL+"Stats/UniqueWeapons/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID,
+	url: BASEURL+"/Stats/PostGameCarnageReport/"+ACTIVITY_ID,
 	beforeSend: function(xhr){ xhr.setRequestHeader('X-API-Key', APIKEY); },
 	method: "GET",
 	data: {
@@ -47,10 +50,10 @@ $.ajax({
 	success: function(res){
 		handleResponse(res);
 		var data = res.Response.data;
-		console.info("First activity:");
-		console.info(data.activities[0]);
+		// console.info("First activity:");
+		// console.info(data.activities[0]);
 		var tmpl = Handlebars.compile( $('#tmpl_Crucible').html() );
-		$('#response').html( tmpl(data) );
+		// $('#response').html( tmpl(data) );
 	},
 	error: function(res){
 		console.error(res);
