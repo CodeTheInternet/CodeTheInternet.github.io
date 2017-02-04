@@ -8,7 +8,7 @@ var MEMBERSHIP_ID   = "4611686018441896324/";
 var CHARACTER_ID    = "2305843009259865633/";
 
 Handlebars.registerHelper("activityModes",function(mode){
-	return ACTIVITY_MODES[mode]
+	return ACTIVITY_MODES[mode];
 });
 
 function handleResponse(res){
