@@ -22,7 +22,7 @@ stats.url += "Stats/ActivityHistory/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID
 stats.data = {
 	"lc":"en",
 	"fmt":true,
-	"lcin":true",
+	"lcin":true,
 	"mode":5,
 	"count":20,
 	"page":0,
