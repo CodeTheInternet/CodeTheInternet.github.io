@@ -10,12 +10,20 @@ var BASEAJAX = {
 		xhr.setRequestHeader('X-API-Key', "6bc6d0c9e58a45958f7671e186a080b0");
 	},
 	success: function(res){
-		console.log(res);
+		handleResponse(res);
 	},
 	error: function(res){
 		console.error(res);
 	}
 };
+
+function handleResponse(res){
+	if (res.ErrorCode) {
+		console.error(res.ErrorCode+": "+res.Message);
+	} else {
+		console.log(res);
+	}	
+}
 
 var stats = BASEAJAX;
 stats.url += "Stats/ActivityHistory/"+MEMBERSHIP_TYPE+MEMBERSHIP_ID+CHARACTER_ID;
