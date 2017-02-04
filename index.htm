@@ -3,20 +3,32 @@
 <head>
 	<title>Destiny Crucible Metrics</title>
 	<script src="jquery.js"></script>
+	<script src="handlebars.js"></script>
 	<script src="ajax.js"></script>
 	<style type="text/css">
 	body { font-family:Arial; }
 	section { width:700px; margin:10px auto; }
 	#status { border:solid 2px #DDD; padding:5px 15px; }
-	#status.loading { background:yellow; }
-	#status.success { background:green; }
-	#status.error   { background:red; }
+	#status.loading { background:#F4F776; }
+	#status.success { background:#BCED91; }
+	#status.error   { background:#FF6347; }
 	</style>
 </head>
 <body>
 	<section>
 		<h1>Destiny Crucible Metrics Sandbox</h1>
 		<div id="status" class="loading">Loading ...</div>
+		<div id="response">
+			Response data will display here.
+		</div>
 	</section>
+
+	<script type="text/x-handlebars-template" id="tmpl_Crucible">
+	<table>
+	{{#each activities}}
+	<tr><th>activites period</th><td>{{period}}</td></tr>
+	{{/each}}
+	</table>
+	</script>
 </body>
 </html>
