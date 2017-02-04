@@ -22,7 +22,7 @@ function handleResponse(res){
 		console.error(res);
 		$('#status').attr('class','error');
 	} else {
-		console.log(res);
+		// console.log(res);
 		$('#status').attr('class','success');
 	}
 	$('#status').text(msg);
@@ -47,7 +47,8 @@ $.ajax({
 	success: function(res){
 		handleResponse(res);
 		var data = res.Response.data;
-		console.info(data.activities);
+		console.info("First activity:");
+		console.info(data.activities[0]);
 		var tmpl = Handlebars.compile( $('#tmpl_Crucible').html() );
 		$('#response').html( tmpl(data) );
 	},
