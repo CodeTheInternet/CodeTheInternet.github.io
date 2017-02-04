@@ -35,7 +35,7 @@ $.ajax({
 		var data = res.Response.data;
 		console.info(data.activities);
 		var tmpl = Handlebars.compile( $('#tmpl_Crucible').html() );
-		$('#response').html( tmpl(res.Response) );
+		$('#response').html( tmpl(data) );
 	},
 	error: function(res){
 		console.error(res);
