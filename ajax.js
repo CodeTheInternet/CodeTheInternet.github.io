@@ -5,13 +5,15 @@ var MEMBERSHIP_ID   = "4611686018441896324/";
 var CHARACTER_ID    = "2305843009259865633/";
 
 function handleResponse(res){
-	if (res.ErrorCode) {
+	if (res.ErrorCode !== 1) {
 		var err = res.ErrorCode+": "+res.Message;
 		console.error(res);
 		$('#status').attr('class','error').text(err);
 	} else {
+		var data = res.Response.data;
 		console.log(res);
 		$('#status').attr('class','success').text(res.responseText);
+		console.info(data.activities);
 	}	
 }
 
