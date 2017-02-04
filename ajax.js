@@ -25,6 +25,7 @@ $.ajax({
 		console.log(res);
 	},
 	error: function(res){
-		console.error(res);
+		console.error(res.responseText);
+		$('article').text(res.responseText);
 	}
 });
